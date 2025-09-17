@@ -1,5 +1,5 @@
 import pytest
-from beginners_stage_1 import is_odd, is_prime
+from beginners_stage_1 import is_odd, is_prime, is_arifm_progression
 
 
 def test_digits_divide_3():
@@ -36,3 +36,16 @@ def test_digits_is_not_prime():
     assert not is_prime(1)
     assert not is_prime(0)
     assert not is_prime(-1)
+
+def tests_is_progression():
+    assert is_arifm_progression(2,4,6)
+    assert is_arifm_progression(3,6,9)
+    assert is_arifm_progression(5,10,15)
+
+def tests_is_not_progression():
+    assert not is_arifm_progression(2,6,8)
+    assert not is_arifm_progression(4,6,10)
+    assert not is_arifm_progression(5,7,0)
+
+
+

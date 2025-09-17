@@ -34,7 +34,7 @@ def is_prime(n: int) -> bool:
 
 
 def is_arifm_progression(a: int, b: int, c: int) -> bool:
-    return False
+    return b == (a + c) // 2
 
 
 # -------------- If condition --------------
