@@ -17,7 +17,13 @@ def is_odd(n: int) -> bool:
 
 
 def is_prime(n: int) -> bool:
-    return False
+    if n < 2:
+        return False
+    for i in range (2, n):
+        if n % i == 0:
+            return False
+    return True
+
 
 
 """
