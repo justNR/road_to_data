@@ -1,5 +1,5 @@
 import pytest
-from beginners_stage_1 import is_odd, is_prime, is_arifm_progression
+from beginners_stage_1 import is_odd, is_prime, is_arifm_progression, get_triangle_kind
 
 
 def test_digits_divide_3():
@@ -46,6 +46,13 @@ def tests_is_not_progression():
     assert not is_arifm_progression(2,6,8)
     assert not is_arifm_progression(4,6,10)
     assert not is_arifm_progression(5,7,0)
+
+def tests_triange_kind():
+    assert get_triangle_kind(1,2,1) == "Равнобедренный"
+    assert get_triangle_kind(2, 3, 4) == "Обычный"
+    assert get_triangle_kind(3, 3, 3) == "Равносторонний"
+
+
 
 
 

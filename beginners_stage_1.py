@@ -46,7 +46,13 @@ def is_arifm_progression(a: int, b: int, c: int) -> bool:
 
 
 def get_triangle_kind(a: int, b: int, c: int) -> str:
-    return "обычный"
+    if a == b == c:
+        return "Равносторонний"
+    elif a == b or b == c or a == c:
+        return "Равнобедренный"
+    else:
+        return "Обычный"
+       
 
 
 # -------------- strings, for loops --------------
