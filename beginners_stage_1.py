@@ -63,7 +63,12 @@ def get_triangle_kind(a: int, b: int, c: int) -> str:
 
 
 def is_palindrom(s: str) -> bool:
-    return False
+    s_pr = s.replace(' ', '')
+
+    for i in range(len(s_pr) // 2):
+        if s_pr[i] != s_pr[-(i + 1)]:
+            return False
+    return True
 
 
 """

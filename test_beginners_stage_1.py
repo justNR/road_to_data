@@ -1,5 +1,5 @@
 import pytest
-from beginners_stage_1 import is_odd, is_prime, is_arifm_progression, get_triangle_kind
+from beginners_stage_1 import is_odd, is_prime, is_arifm_progression, get_triangle_kind, is_palindrom
 
 
 def test_digits_divide_3():
@@ -51,6 +51,10 @@ def tests_triange_kind():
     assert get_triangle_kind(1,2,1) == "Равнобедренный"
     assert get_triangle_kind(2, 3, 4) == "Обычный"
     assert get_triangle_kind(3, 3, 3) == "Равносторонний"
+
+def tests_is_palindrom_with_spaces():
+    assert is_palindrom("а роза упала на лапу азора")
+    assert not is_palindrom("а роза не упала на азор")
 
 
 
