@@ -116,8 +116,11 @@ def get_person_short_name(fio: str) -> str:
 
 
 def is_list_growing(lst: list[float]) -> bool:
-    return False
-
+    for i in range(len(lst) - 1):
+        if lst[i+1] <= lst[i]:
+            return False
+    return True
+    
 
 """
     Дан список целых чисел и определенное заданное число. Найти все пары из списка,
