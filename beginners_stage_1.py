@@ -78,7 +78,20 @@ def is_palindrom(s: str) -> bool:
 
 
 def get_words(s: str) -> list[str]:
-    return []
+    sep = ' '
+    res = []
+    curr_part = ""
+    for elem in s:
+        if elem != sep:
+            curr_part += elem 
+        else:
+            res.append(curr_part)
+            curr_part = ""
+    if curr_part != "":
+        res.append(curr_part)
+    return res
+        
+    
 
 
 """

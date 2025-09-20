@@ -1,5 +1,5 @@
 import pytest
-from beginners_stage_1 import is_odd, is_prime, is_arifm_progression, get_triangle_kind, is_palindrom
+from beginners_stage_1 import is_odd, is_prime, is_arifm_progression, get_triangle_kind, is_palindrom, get_words
 
 
 def test_digits_divide_3():
@@ -11,7 +11,6 @@ def test_digits_not_divide_3():
     assert not is_odd(2)
     assert not is_odd(4)
     assert not is_odd(8)
-
 
 def test_divide_by_zero():
     assert is_odd(0)
@@ -26,7 +25,6 @@ def test_negative_digits_not_divide_3():
     assert not is_odd(-5)
     assert not is_odd(-7)
     
-
 def test_digits_is_prime():
     assert is_prime(2)
     assert is_prime(3)
@@ -55,6 +53,10 @@ def tests_triange_kind():
 def tests_is_palindrom_with_spaces():
     assert is_palindrom("а роза упала на лапу азора")
     assert not is_palindrom("а роза не упала на азор")
+
+def tests_get_word():
+    assert get_words("Александр Сергеевич Пушкин") == ["Александр", "Сергеевич", "Пушкин"]
+    assert not get_words("Иванов Петров  Сидоров") == ["Иванов", "Петров", "Сидоров"]
 
 
 
