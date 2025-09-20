@@ -131,4 +131,12 @@ def is_list_growing(lst: list[float]) -> bool:
 
 
 def get_pairs_number(lst: list[int], n) -> list[tuple]:
-    return []
+    pair_list = set()
+    seen = set()
+    for elem in lst:
+       needed = n - elem
+       if needed in seen:
+           pair = (max(elem,needed), min(elem, needed))
+           pair_list.add(pair)
+       seen.add(elem)
+    return sorted(pair_list)

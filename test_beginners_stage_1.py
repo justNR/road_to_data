@@ -1,5 +1,5 @@
 import pytest
-from beginners_stage_1 import is_odd, is_prime, is_arifm_progression, get_triangle_kind, is_palindrom, get_words, get_person_short_name, is_list_growing
+from beginners_stage_1 import is_odd, is_prime, is_arifm_progression, get_triangle_kind, is_palindrom, get_words, get_person_short_name, is_list_growing, get_pairs_number
 
 
 def test_digits_divide_3():
@@ -65,6 +65,9 @@ def tests_get_person_short_name():
 def tests_is_list_growing():
     assert is_list_growing([1,2,3,4,5]) == True
     assert is_list_growing([2,1,32,1,5]) == False
+
+def tests_get_pairs_number():
+    assert get_pairs_number([1, 2, 4, 3, 5, 2], 7) == [(4,3), (5,2)]
 
 
 
