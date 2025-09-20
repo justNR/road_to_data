@@ -101,7 +101,10 @@ def get_words(s: str) -> list[str]:
 
 
 def get_person_short_name(fio: str) -> str:
-    return ""
+    parts = fio.split()
+    surname = parts[0]
+    initials = f"{parts[1][0].upper()}. {parts[2][0].upper()}."
+    return f"{surname} {initials}"
 
 
 # -------------- lists --------------
