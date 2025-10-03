@@ -34,8 +34,9 @@ def get_views_count(n: int) -> str:
 
 
 def move_zeros(lst: list[float]) -> list:
-    return lst
-
+    new_lst = [i for i in lst if i != 0]
+    zeros = [0] * (len(lst) - len(new_lst))
+    return new_lst + zeros
 
 """
     Данные загрузились из БД с лишними символами, а должны быть только русские буквы.
