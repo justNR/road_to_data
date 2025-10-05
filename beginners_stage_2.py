@@ -8,6 +8,8 @@
 def get_views_count(n: int) -> str:
     if n < 0:
         raise ValueError("Количество просмотров не может быть отрицательным")
+    if not isinstance(n, int):
+        raise ValueError("Количество просмотров должно быть целым числом")
     last_two_digit = n % 100
     if 11 <= last_two_digit <= 14:
        form = "просмотров"
@@ -33,10 +35,25 @@ def get_views_count(n: int) -> str:
 """
 
 
-def move_zeros(lst: list[float]) -> list:
+def move_zeros_with_new_dict(lst: list[float]) -> list:
     new_lst = [i for i in lst if i != 0]
     zeros = [0] * (len(lst) - len(new_lst))
     return new_lst + zeros
+
+def move_zeros_two_pointers(lst: list[float]) -> None:
+    slow = 0
+    for i in range(len(lst)):
+        if lst[i] != 0:
+            lst[slow] = lst[i]
+            slow +=1
+    for j in range(slow, len(lst)):
+        lst[j] = 0
+    
+        
+
+nums = [1, 0, 2, 0, 3]
+move_zeros_two_pointers(nums)
+print(nums)  # ожидаем [1, 2, 3, 0, 0]
 
 """
     Данные загрузились из БД с лишними символами, а должны быть только русские буквы.
