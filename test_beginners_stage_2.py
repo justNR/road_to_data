@@ -17,9 +17,21 @@ def test_move_zeros():
     assert result == [1, 2, 3, 1, 0, 0, 0]
     assert data == [1, 0, 0, 2, 3, 0, 1]
 
+def test_move_zeros_no_zeros():
+    data = [1, 2, 1, 2, 3, 1, 1]
+    result = move_zeros_with_new_dict(data)
+    assert result == [1, 2, 1, 2, 3, 1, 1]
+    assert data == [1, 2, 1, 2, 3, 1, 1]    
+
 def test_move_zeros_two_pointers():
     data = [1, 0, 0, 2, 3, 0, 1]
     move_zeros_two_pointers(data)
     assert data == [1, 2, 3, 1, 0, 0, 0]
+
+def test_move_zeros_two_pointers_no_zeros():
+    data = [1, 2, 3, 2, 3, 5, 1]
+    move_zeros_two_pointers(data)
+    assert data == [1, 2, 3, 2, 3, 5, 1]
+
 
 
