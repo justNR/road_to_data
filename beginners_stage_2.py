@@ -50,11 +50,6 @@ def move_zeros_two_pointers(lst: list[float]) -> None:
         lst[j] = 0
     
         
-
-nums = [1, 0, 2, 0, 3]
-move_zeros_two_pointers(nums)
-print(nums)  # ожидаем [1, 2, 3, 0, 0]
-
 """
     Данные загрузились из БД с лишними символами, а должны быть только русские буквы.
     Напишите функцию, которая удаляет символы, которые не являются русскими буквами.
@@ -63,7 +58,15 @@ print(nums)  # ожидаем [1, 2, 3, 0, 0]
 
 
 def clean_name(fio: str) -> str:
-    return ""
+    res = []
+    for ch in fio:
+        if "А" <= ch <= "я" or ch in "Её":
+            if ch.isspace():
+                res.append(ch)
+            res.append(ch)
+    cleaned = ''.join(" ".join(res).split())
+    return cleaned
+print(clean_name("Иsвtrан Ив^%ан Ива?но)вич"))
 
 
 """
@@ -74,4 +77,10 @@ def clean_name(fio: str) -> str:
 
 
 def get_pct_growth(s: list[float]) -> list[float]:
-    return []
+    grow_list = []
+    grow_list.append(None)
+    for i in range(1, len(s)):
+        grow = (s[i] - s[i-1]) / s[i-1]
+        grow = round(grow * 100)
+        grow_list.append(grow)
+    return grow_list

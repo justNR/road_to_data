@@ -1,5 +1,5 @@
 import pytest
-from beginners_stage_2 import get_views_count, move_zeros_with_new_dict, move_zeros_two_pointers
+from beginners_stage_2 import get_views_count, move_zeros_with_new_dict, move_zeros_two_pointers, get_pct_growth
 
 
 def test_get_views_count():
@@ -33,5 +33,14 @@ def test_move_zeros_two_pointers_no_zeros():
     move_zeros_two_pointers(data)
     assert data == [1, 2, 3, 2, 3, 5, 1]
 
+def test_basic_growth():
+    assert get_pct_growth([100, 150, 300, 400]) == [None, 50, 100, 33]
 
+def test_no_growth():
+    assert get_pct_growth([100, 100, 100]) == [None, 0, 0]
 
+def test_negative_growth():
+    assert get_pct_growth([200, 100]) == [None, -50]
+
+def test_single_element():
+    assert get_pct_growth([100]) == [None]
